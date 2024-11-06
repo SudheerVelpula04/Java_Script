@@ -400,7 +400,7 @@ arr6.map(el => el + 10); // [11, 12, 13, 14]
 
  
 
- 18. **`reduce()`**
+//  18. **`reduce()`**
 /*- **Purpose**: Executes a reducer function on each element, resulting in a single value.
 - **Returns**: The reduced value.*/
 
