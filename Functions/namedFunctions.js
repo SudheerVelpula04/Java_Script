@@ -8,7 +8,7 @@ function isPrime(num) {
 console.log(isPrime(5))
 
 
-function name(){
-    return 20*90
-}
-console.log(name())
+// function name(){
+//     return 20*90
+// }
+// console.log(name())

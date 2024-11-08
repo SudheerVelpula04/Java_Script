@@ -493,3 +493,15 @@ arr3.every(el => el === true); // true
 
 let arr4 = [100, 200];
 arr4.every(el =>
+
+
+
+
+
+
+    function(){
+        var x=99;
+        var y=x/4
+        return y conv()
+    }
+console.log(x , "rgfgbf" conv())
