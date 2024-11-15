@@ -94,7 +94,39 @@ function funone(callback){
   
   
   
-  
+// call back 
+
+
+step1(10,function(resalt1,error){
+  if(!error){
+    step2(resalt1,function(resalt2,error){
+      if(!error){
+        step3(resalt2,function(resalt3,error){
+          if(!error){
+            console.log('resalts',resalt3)
+          }
+        })
+      }
+    })
+  }
+});
+
+
+
+
+
+
+
+function step1(value,calback){
+  calback(value+10,false);
+}
+function step2(value,calback){
+  calback(value+10,false);
+}
+function step3(value,calback){
+  calback(value+10,false);
+}
+
   
   
   
