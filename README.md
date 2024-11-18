@@ -85,12 +85,12 @@ Many array methods in JavaScript use callbacks to iterate through elements and a
 
 
 
-Example: `map()`
-        let numbers = [1, 2, 3, 4];
-        let squared = numbers.map(function(num) {
-          return num * num;
-        });
-        console.log(squared);  // [1, 4, 9, 16]
+        Example: `map()`
+                let numbers = [1, 2, 3, 4];
+                let squared = numbers.map(function(num) {
+                  return num * num;
+                });
+                console.log(squared);  // [1, 4, 9, 16]
 
 Explanation:
 - The `map()` method takes a callback function, which is called for each element in the array. It returns a new array with the results of applying the callback function to each element.
