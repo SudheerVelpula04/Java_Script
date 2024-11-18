@@ -6,10 +6,10 @@ Syntax of a Callback Function:
 A callback is simply a function that is passed as an argument to another function.
 
 
-function greet(name, callback) {
-  console.log("Hello, " + name);
-  callback();  // Call the callback function
-}
+        function greet(name, callback) {
+          console.log("Hello, " + name);
+          callback();  // Call the callback function
+        }
 function sayGoodbye() {
   console.log("Goodbye!");
 }
