@@ -1,3 +1,5 @@
+/*---------------------------------------------math_methods-----------------------------------------------------*/
+
 /*In , the `Math` object provides a collection of methods and properties that allow you to perform mathematical operations. These methods cover a wide range of operations such as rounding, finding maximum and minimum values, generating random numbers, etc. Below is a summary of commonly used `Math` methods in javaScript*/
 
 //    1. Math.abs()
@@ -147,8 +149,8 @@ console.log(Math.log2(16));   // 4 (log2(16) = 4)
 
 
 
-Example: **Generating a Random Integer Between Two Values**
-To generate a random integer between two numbers (inclusive):
+/*Example: **Generating a Random Integer Between Two Values**
+To generate a random integer between two numbers (inclusive):*/
 
 
 function getRandomInt(min, max) {
