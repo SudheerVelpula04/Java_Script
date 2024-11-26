@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #83c9e0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .loader {
+            font-size: 24px;
+            color: #5e34db;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader">Loading</div>
+
+    <script>
+        const loaderElement = document.querySelector('.loader');
+        let dots = 0;
+        const maxDots = 3;
+        const loadingDuration = 5000; // 5 seconds
+
+        // Function to update loading message
+        // const updateLoadingMessage = () => {
+        //     dots = (dots + 1) % (maxDots + 1);
+        //     loaderElement.textContent = 'Loading' + '.'.repeat(dots);
+        // };
+
+        // Set interval to update loading message every second
+        const intervalId = setInterval(()=>{
+            dots=(dots+1)%(maxDots+1);// 0+1 % 4 = 1, 1+1 % 4 = 2, 2+1 % 4 = 3, 3+1 % 4 = 0.
+            loaderElement.textContent = 'Loading' + '.'+'.'.repeat(dots);
+        }, 1000);
+
+        // Set timeout to stop loading after a certain duration
+        setTimeout(() => {
+            clearInterval(intervalId);
+            // loaderElement.textContent = 'Loading complete!';
+        }, loadingDuration);
+    </script>
+</body>
+</html>
