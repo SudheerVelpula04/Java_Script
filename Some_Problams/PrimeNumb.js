@@ -119,3 +119,71 @@ if(num==1){
   console.log(res)
 }
 /*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+for (let i = 2; i <= 100; i++) {
+    let isPrime = true;  // Assume i is prime initially
+  
+    // Check if i is divisible by any number from 2 to the square root of i
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {  // If i is divisible by j, it's not prime
+        isPrime = false;
+        break;
+      }
+    }
+  
+    // If isPrime is still true, then i is prime, so print it
+    if (isPrime) {
+      console.log(i);
+    }
+  }
+  /*--------------------------------------------------------------------------------------------------------------------------------------------------*/
+  for (let i = 2; i <= 100; i++) {
+    let isPrime = true;  // Assume i is prime initially
+  
+    // Check if i is divisible by any number from 2 to i-1
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) {  // If i is divisible by j, it's not prime
+        isPrime = false;
+        break;
+      }
+    }
+  
+    // If isPrime is still true, then i is prime, so print it
+    if (isPrime) {
+      console.log(i);
+    }
+  }
+    /*----------------------------------------------------------------------butterfly patten----------------------------------------------------------------------------*/
+    let n=5;
+for(i=1;i<=n;i++){
+  let line='';
+  for(j=1;j<=i;j++){
+    line += '*';
+  }
+  let space=2*(n-i)
+  for(k=1;k<=space;k++){
+    line +=' '
+  }
+  for(j=1;j<=i;j++){
+    line +='*'
+  }
+  // console.log(space)
+  console.log(line)
+}
+for(i=n;i>0;i--){
+  let line='';
+  for(j=1;j<=i;j++){
+    line += '*';
+  }
+  let space=2*(n-i)
+  for(k=1;k<=space;k++){
+    line +=' '
+  }
+  for(j=1;j<=i;j++){
+    line +='*'
+  }
+  // console.log(space)
+  console.log(line)
+}
+
+  
+  
