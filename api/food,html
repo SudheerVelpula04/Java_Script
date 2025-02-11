@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Recipe Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ff6f61;
+            color: white;
+        }
+
+        #search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #searchh {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e55d50;
+        }
+
+        #container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Food Recipe Search</h1>
+    </header>
+
+    <div id="search-container">
+        <input type="text" id="searchh" placeholder="Search for a recipe...">
+        <button onclick="fun()">Search</button>
+    </div>
+
+    <div id="container"></div>
+
+    <script>
+        async function fun() {
+            const inp = document.getElementById("searchh").value;
+            const response = await fetch(`https://api.edamam.com/search?q=${inp}&app_id=a52b4d43&app_key=e0e5c667605f5e91d8275c973531b80a`);
+            const food = await response.json();
+
+            const container = document.getElementById("container");
+            container.innerHTML = ""; // Clear previous results
+
+            food.hits.forEach(val => {
+                const card = document.createElement("div");
+                card.className = "card";
+
+                const title = document.createElement("h3");
+                title.textContent = val.recipe.label;
+
+                const calories = document.createElement("p");
+                calories.textContent = `Calories: ${Math.round(val.recipe.calories)}`;
+
+                const img = document.createElement("img");
+                img.src = val.recipe.image;
+                img.alt = val.recipe.label;
+
+                card.append(img, title, calories);
+                container.append(card);
+            });
+        }
+
+
+
+
+
+
+
+      
+    </script>
+</body>
+
+</html>

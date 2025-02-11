@@ -39,7 +39,7 @@ for(i=2;i<=100;i++){
     }
   
   }
-  console.log(str2)
+  console.log(str3)
   
   // find a length without using length method
   let str4='venkatasudheer'

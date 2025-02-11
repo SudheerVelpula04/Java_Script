@@ -22,8 +22,7 @@
 //    console.log(minutes)
 //    console.log(seconds)
 //    console.log(ampm)
-//           console.log(Date())
-
+//    console.log(Date())
 
 
 // let gettime=date.gettime()
